@@ -1,0 +1,27 @@
+#Caso 1
+Estado inicial: 7621 3458
+=== Tabla comparativa ===
+Algoritmo              Profund.     Procesados   Generados    Esp.Max      Tiempo(s) 
+Anchura (BFS)          18           21561        77763        17060        0.0458    
+Profundidad (DFS)      6202         6263         18107        5009         0.0095    
+Costo Uniforme (UCS)   18           22702        46315        17093        0.0479    
+Prof. Limitada (DLS)   26           33093        55947        27           0.0215    
+Iterativa (IDS)        26           33093        55947        27           0.0104    
+
+
+#Caso 2
+Estado inicial: 524 73618
+=== Tabla comparativa ===
+Algoritmo              Profund.     Procesados   Generados    Esp.Max      Tiempo(s) 
+Anchura (BFS)          19           40426        154201       26619        0.0735    
+Profundidad (DFS)      91013        106847       301645       69905        0.0941    
+Costo Uniforme (UCS)   19           34225        70185        23872        0.0722    
+Prof. Limitada (DLS)   No encontrado 17408        28993        24           0.0146    
+Iterativa (IDS)        31           27335        47444        30           0.0123  
+
+
+#Conclusiones
+Después de correr los 2 casos se obtuvieron resultados BFS y UCS coincidieron exactamente en la profundidad de la solución, esto nos dice que siempre encuentran el camino óptimo. DFS mostro una diferencia en ambos casos en el caso 1 fue el mss rapido, pero en el caso 2 resulto el más lento esto es debido a la rama que explore primero, en el caso 2 DLS no encontro la meta porque el límite resultó insuficiente para la profundidad real de la solucion no porque se haya excedido, esto se mira mejor en el caso 1 donde un límite de 30 fallaba pero el límite exacto de 26 sí funcionaba: aumentar el límite no garantiza encontrar la solución, en IDs este logró encontrar la meta en ambos casos sin necesidad de adivinar el límite ya que prueba valores desde 0 hasta encontrar uno que funcione esa es una ventaja sobre el DLS.
+  
+
+
